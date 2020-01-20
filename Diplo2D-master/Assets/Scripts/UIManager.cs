@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -71,5 +72,7 @@ public class UIManager : MonoBehaviour
     {
         mainMixer.SetFloat("sfxVolume", sfx);
     }
+
+ 
 
 }

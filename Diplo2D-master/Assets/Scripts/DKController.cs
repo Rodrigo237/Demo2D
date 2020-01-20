@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DKController : MonoBehaviour
 {
@@ -112,9 +113,19 @@ public class DKController : MonoBehaviour
         if (col.transform.tag == "Barrel")
         {
             dkAnimator.SetTrigger("Damage");
-            DataLoader.instance.currentPlayer.lives--;
+            if (DataLoader.instance.currentPlayer.lives > 0)
+            {
+                DataLoader.instance.currentPlayer.lives--;
+            }
+            else
+                SceneManager.LoadScene(0);
             // countDamage++;
             dkSource.PlayOneShot(sfx[2]);
+        }
+
+        if(col.transform.tag == "Enemy")
+        {
+            SceneManager.LoadScene(2);
         }
     }
 
