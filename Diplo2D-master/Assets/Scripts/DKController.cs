@@ -20,6 +20,7 @@ public class DKController : MonoBehaviour
     private bool Ground;
     private int countDamage;
     private Animator dkAnimator;
+    private int levelPass = 1;
 
     void Awake()
     {
@@ -125,7 +126,9 @@ public class DKController : MonoBehaviour
 
         if(col.transform.tag == "Enemy")
         {
-            SceneManager.LoadScene(2);
+            levelPass++;
+            DataLoader.instance.currentPlayer.lastLevel++;
+            SceneManager.LoadScene(levelPass);
         }
     }
 

@@ -26,7 +26,7 @@ public class DataLoader : MonoBehaviour
         {
             currentPlayer = new Player();
             currentPlayer.items = 0;
-            currentPlayer.lives = 3;
+            currentPlayer.lives = 10;
             currentPlayer.lastLevel = 0;
         }
     }
