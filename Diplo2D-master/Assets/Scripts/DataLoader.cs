@@ -26,8 +26,10 @@ public class DataLoader : MonoBehaviour
         {
             currentPlayer = new Player();
             currentPlayer.items = 0;
-            currentPlayer.lives = 10;
-            currentPlayer.lastLevel = 0;
+            currentPlayer.lives = 8;
+            currentPlayer.lastLevel = 1;
+            currentPlayer.musicVolume = 0;
+            currentPlayer.sfxVolume = 0;
         }
     }
 

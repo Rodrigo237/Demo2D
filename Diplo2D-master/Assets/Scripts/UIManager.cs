@@ -45,8 +45,10 @@ public class UIManager : MonoBehaviour
         pausePanel.SetActive(true);
         mainMixer.GetFloat("musicVolume", out musicVolume);
         musicSlider.value = musicVolume;
+        DataLoader.instance.currentPlayer.musicVolume = musicSlider.value;
         mainMixer.GetFloat("sfxVolume", out sfxVolume);
         sfxSlider.value = sfxVolume;
+        DataLoader.instance.currentPlayer.sfxVolume = sfxSlider.value;
         Time.timeScale = 0f;
     }
 

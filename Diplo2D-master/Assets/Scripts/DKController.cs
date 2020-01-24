@@ -109,7 +109,7 @@ public class DKController : MonoBehaviour
         if (col.transform.tag == "Ground")
         {
             Ground = true;
-            // print("Can Jump");
+
         }
         if (col.transform.tag == "Barrel")
         {
@@ -126,9 +126,9 @@ public class DKController : MonoBehaviour
 
         if(col.transform.tag == "Enemy")
         {
-            levelPass++;
-            DataLoader.instance.currentPlayer.lastLevel++;
+            levelPass = levelPass + 1;
             SceneManager.LoadScene(levelPass);
+            DataLoader.instance.currentPlayer.lastLevel++;
         }
     }
 
