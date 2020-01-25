@@ -61,6 +61,7 @@ public class UIManager : MonoBehaviour
 
     public void Exit()
     {
+        print("salir");
         DataLoader.instance.WriteData();
         Application.Quit();
     }

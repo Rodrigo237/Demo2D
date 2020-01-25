@@ -14,11 +14,11 @@ public class ThrowBarrel : MonoBehaviour
         StartCoroutine("createBarrel");
     }
 
-    IEnumerator createBarrel(int seconds,Vector2 direction)
+    IEnumerator createBarrel()
     {
         tmpBarrel = Instantiate(barrel, barrelPos.position, Quaternion.identity);
-        tmpBarrel.GetComponent<Rigidbody2D>().AddForce(direction);
-        yield return new WaitForSeconds(seconds);
+        tmpBarrel.GetComponent<Rigidbody2D>().AddForce(barrelDirection);
+        yield return new WaitForSeconds(5f);
         StartCoroutine("createBarrel");
     }
 }
