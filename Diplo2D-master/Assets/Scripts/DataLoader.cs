@@ -7,11 +7,12 @@ public class DataLoader : MonoBehaviour
 {
     public static DataLoader instance;
     public Player currentPlayer;
+    public Enemy currentEnemy;
     public string fileName;
     private StreamReader sr;
     private StreamWriter sw;
     private string jsonString;
-
+    public string fileEnemy;
     void Awake()
     {
         instance = this;
@@ -30,6 +31,20 @@ public class DataLoader : MonoBehaviour
             currentPlayer.lastLevel = 1;
             currentPlayer.musicVolume = 0;
             currentPlayer.sfxVolume = 0;
+        }
+
+        if(File.Exists(Application.persistentDataPath + "/" + fileEnemy))
+        {
+            sr = new StreamReader(Application.persistentDataPath + "/" + fileEnemy);
+            jsonString = sr.ReadToEnd();
+            sr.Close();
+            currentEnemy = JsonUtility.FromJson<Enemy>(jsonString);
+        }
+        else
+        {
+            currentEnemy = new Enemy();
+            currentEnemy.time = 10;
+            currentEnemy.barrelDirection = new Vector2(-150, -10);
         }
     }
 

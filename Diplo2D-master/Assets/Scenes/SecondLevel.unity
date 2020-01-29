@@ -1530,7 +1530,11 @@ MonoBehaviour:
     lastLevel: 0
     musicVolume: 0
     sfxVolume: 0
+  currentEnemy:
+    time: 0
+    barrelDirection: {x: 0, y: 0}
   fileName: player.json
+  fileEnemy: enemy.json
 --- !u!4 &264855448
 Transform:
   m_ObjectHideFlags: 0

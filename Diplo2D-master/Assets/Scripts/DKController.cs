@@ -128,7 +128,7 @@ public class DKController : MonoBehaviour
         {
             DataLoader.instance.currentPlayer.lastLevel++;
             SceneManager.LoadScene(DataLoader.instance.currentPlayer.lastLevel);
-           
+            DataLoader.instance.currentEnemy.time--;
         }
     }
 

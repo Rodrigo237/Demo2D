@@ -8,7 +8,7 @@ public class ThrowBarrel : MonoBehaviour
     public Transform barrelPos;
     public Vector2 barrelDirection;
     private GameObject tmpBarrel;
-
+    private Enemy currentEnemy;
     void Start()
     {
         StartCoroutine("createBarrel");
@@ -17,8 +17,8 @@ public class ThrowBarrel : MonoBehaviour
     IEnumerator createBarrel()
     {
         tmpBarrel = Instantiate(barrel, barrelPos.position, Quaternion.identity);
-        tmpBarrel.GetComponent<Rigidbody2D>().AddForce(barrelDirection);
-        yield return new WaitForSeconds(5f);
+        tmpBarrel.GetComponent<Rigidbody2D>().AddForce(currentEnemy.barrelDirection);
+        yield return new WaitForSeconds(currentEnemy.time);
         StartCoroutine("createBarrel");
     }
 }
