@@ -4584,7 +4584,11 @@ MonoBehaviour:
     lastLevel: 0
     musicVolume: 0
     sfxVolume: 0
+  currentEnemy:
+    time: 0
+    barrelDirection: {x: 0, y: 0}
   fileName: player.json
+  fileEnemy: enemy.json
 --- !u!4 &1647253901
 Transform:
   m_ObjectHideFlags: 0
@@ -4977,30 +4981,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4297811723860927693, guid: e05dedc9199fdd342982ca8fc0dd2095,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4297811723860927694, guid: e05dedc9199fdd342982ca8fc0dd2095,
         type: 3}
       propertyPath: m_Name
       value: EnemyAttack_0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4297811723860927694, guid: e05dedc9199fdd342982ca8fc0dd2095,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7623869351871158252, guid: e05dedc9199fdd342982ca8fc0dd2095,
-        type: 3}
-      propertyPath: barrelDirection.x
-      value: -150
-      objectReference: {fileID: 0}
-    - target: {fileID: 7623869351871158252, guid: e05dedc9199fdd342982ca8fc0dd2095,
-        type: 3}
-      propertyPath: barrelDirection.y
-      value: -10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e05dedc9199fdd342982ca8fc0dd2095, type: 3}

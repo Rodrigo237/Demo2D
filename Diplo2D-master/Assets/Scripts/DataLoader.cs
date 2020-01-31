@@ -11,6 +11,9 @@ public class DataLoader : MonoBehaviour
     public string fileName;
     private StreamReader sr;
     private StreamWriter sw;
+    private StreamReader srEnemy;
+    private StreamWriter swEnemy;
+    private string jsonStringEnemy;
     private string jsonString;
     public string fileEnemy;
     void Awake()
@@ -35,10 +38,10 @@ public class DataLoader : MonoBehaviour
 
         if(File.Exists(Application.persistentDataPath + "/" + fileEnemy))
         {
-            sr = new StreamReader(Application.persistentDataPath + "/" + fileEnemy);
-            jsonString = sr.ReadToEnd();
-            sr.Close();
-            currentEnemy = JsonUtility.FromJson<Enemy>(jsonString);
+            srEnemy = new StreamReader(Application.persistentDataPath + "/" + fileEnemy);
+            jsonString = srEnemy.ReadToEnd();
+            srEnemy.Close();
+            currentEnemy = JsonUtility.FromJson<Enemy>(jsonStringEnemy);
         }
         else
         {
@@ -53,5 +56,12 @@ public class DataLoader : MonoBehaviour
         sw = new StreamWriter(Application.persistentDataPath + "/" + fileName, false);
         sw.Write(JsonUtility.ToJson(currentPlayer));
         sw.Close();
+    }
+
+    public void WriteDataEnemy()
+    {
+        swEnemy = new StreamWriter(Application.persistentDataPath + "/" + fileEnemy, false);
+        swEnemy.Write(JsonUtility.ToJson(currentEnemy));
+        swEnemy.Close();
     }
 }
