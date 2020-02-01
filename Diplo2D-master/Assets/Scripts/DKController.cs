@@ -33,6 +33,7 @@ public class DKController : MonoBehaviour
         rbDK = GetComponent<Rigidbody2D>();
         dkSource = GetComponent<AudioSource>();
         Ground = false;
+        indiceScene = SceneManager.GetActiveScene().buildIndex;
 
         // PlayerProfiler.instance.LoadData();
 
