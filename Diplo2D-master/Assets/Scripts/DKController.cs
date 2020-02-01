@@ -123,6 +123,7 @@ public class DKController : MonoBehaviour
                 SceneManager.LoadScene(0);
             // countDamage++;
             dkSource.PlayOneShot(sfx[2]);
+            RewardedVideo.instance.ShowVideoForLIfes();
         }
 
         if(col.transform.tag == "Enemy")
