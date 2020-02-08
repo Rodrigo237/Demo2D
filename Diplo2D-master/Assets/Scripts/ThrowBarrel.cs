@@ -16,8 +16,8 @@ public class ThrowBarrel : MonoBehaviour
 
     IEnumerator createBarrel()
     {
-      //  tmpBarrel = Instantiate(barrel, barrelPos.position, Quaternion.identity);
-        tmpBarrel = ObjectPool.instance.GetGameObjectOfType("barrel_0",true);
+      tmpBarrel = Instantiate(barrel, barrelPos.position, Quaternion.identity);
+       // tmpBarrel = ObjectPool.instance.GetGameObjectOfType("barrel_0",true);
         if(tmpBarrel != null){
         tmpBarrel.transform.position = barrelPos.position;
         tmpBarrel.transform.rotation = Quaternion.identity;

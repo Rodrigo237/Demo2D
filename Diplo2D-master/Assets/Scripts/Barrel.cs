@@ -10,8 +10,8 @@ public class Barrel : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             Instantiate(explosion, collision.transform.position, Quaternion.identity);
-           // Destroy(this.gameObject);
-           ObjectPool.instance.PoolGameObject(this.gameObject);
+           Destroy(this.gameObject);
+           //ObjectPool.instance.PoolGameObject(this.gameObject);
         }
     }
 }

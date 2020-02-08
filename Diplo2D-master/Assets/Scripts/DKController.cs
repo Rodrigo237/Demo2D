@@ -120,18 +120,32 @@ public class DKController : MonoBehaviour
                 DataLoader.instance.currentPlayer.lives--;
             }
             else
+            {
+                DataLoader.instance.currentPlayer.items = 0;
+                DataLoader.instance.currentPlayer.lives = 4;
+                DataLoader.instance.currentPlayer.lastLevel = 1;
+                DataLoader.instance.currentPlayer.musicVolume = 0;
+                DataLoader.instance.currentPlayer.sfxVolume = 0;
+                DataLoader.instance.WriteData();
+                DataLoader.instance.currentEnemy.time = 5;
+                DataLoader.instance.currentEnemy.barrelDirection = new Vector2(-150, -10);
+                DataLoader.instance.WriteDataEnemy();
+                // countDamage++;
+                dkSource.PlayOneShot(sfx[2]);
+                //    RewardedVideo.instance.ShowVideoForLIfes();
                 SceneManager.LoadScene(0);
-            // countDamage++;
-            dkSource.PlayOneShot(sfx[2]);
-            RewardedVideo.instance.ShowVideoForLIfes();
+            }
         }
 
         if(col.transform.tag == "Enemy")
         {
             DataLoader.instance.currentPlayer.lastLevel += 1;
+            DataLoader.instance.currentEnemy.time--;
+            DataLoader.instance.WriteData();
+            DataLoader.instance.WriteDataEnemy();
             indiceScene++;
             SceneManager.LoadScene(indiceScene);
-            DataLoader.instance.currentEnemy.time--;
+            
         }
     }
 

@@ -30,7 +30,7 @@ public class DataLoader : MonoBehaviour
         {
             currentPlayer = new Player();
             currentPlayer.items = 0;
-            currentPlayer.lives = 8;
+            currentPlayer.lives = 4;
             currentPlayer.lastLevel = 1;
             currentPlayer.musicVolume = 0;
             currentPlayer.sfxVolume = 0;
@@ -38,15 +38,16 @@ public class DataLoader : MonoBehaviour
 
         if(File.Exists(Application.persistentDataPath + "/" + fileEnemy))
         {
+            Debug.Log("Enemy");
             srEnemy = new StreamReader(Application.persistentDataPath + "/" + fileEnemy);
-            jsonString = srEnemy.ReadToEnd();
+            jsonStringEnemy = srEnemy.ReadToEnd();
             srEnemy.Close();
             currentEnemy = JsonUtility.FromJson<Enemy>(jsonStringEnemy);
         }
         else
         {
             currentEnemy = new Enemy();
-            currentEnemy.time = 10;
+            currentEnemy.time = 5;
             currentEnemy.barrelDirection = new Vector2(-150, -10);
         }
     }
